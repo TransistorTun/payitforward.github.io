@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="Eng" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <link sizes="32x32" href="../../_static/favicon.png" rel="icon" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nguyên lý hoạt động &mdash; test 0.01 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/dark_mode_css/general.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/dark_mode_css/dark.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/dark_mode_js/default_dark.js"></script>
+        <script src="../../_static/dark_mode_js/theme_switcher.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Thực hiện" href="../Thuc_hien/index.html" />
+    <link rel="prev" title="Mạch trái tim" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> test
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Mạch trái tim</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Nguyên lý hoạt động</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mach-tao-xung">Mạch tạo xung</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mach-dieu-khien-led">Mạch điều khiển LED</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Thuc_hien/index.html">Thực hiện</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">test</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Mạch trái tim</a> &raquo;</li>
+      <li>Nguyên lý hoạt động</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/1.Mach_trai_tim/Nguyen_ly_hoat_dong/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="nguyen-ly-hoat-dong">
+<h1>Nguyên lý hoạt động<a class="headerlink" href="#nguyen-ly-hoat-dong" title="Permalink to this heading"></a></h1>
+<p>Mạch LED trái tim thường được thiết kế để tạo ra hiệu ứng nhấp nháy hoặc &quot;chạy&quot; LED theo các mẫu nhất định. Mạch này sử dụng một số linh kiện cơ bản như: IC tạo xung NE555, IC ghi dịch 74HC595, LED, điện trở, tụ điện,... Mạch được tạo thành từ hai phần chính: mạch tạo xung và mạch điều khiển LED.</p>
+<section id="mach-tao-xung">
+<h2>Mạch tạo xung<a class="headerlink" href="#mach-tao-xung" title="Permalink to this heading"></a></h2>
+<p>Mạch này có nhiệm vụ tạo ra các xung clock liên tục để điều khiển quá trình ghi dịch dữ liệu trong mạch bằng việc cấu hình NE555 ở chế độ astable. Tần số của các xung này phụ thuộc vào các điện trở và tụ điện được cấu hình cho NE555.</p>
+<p>Giới thiệu về IC NE555 — một IC quen thuộc, thường dùng để tạo xung clock. Dưới đây là chức năng của từng chân:</p>
+<p>GND - Ground (Chân 1): Chân nối đất, kết nối với cực âm của nguồn điện.</p>
+<p>VCC (Chân 8): Chân cấp nguồn, nối với cực dương của nguồn điện (thường từ 4.5V đến 9V).</p>
+<p>DIS - Discharge (Chân 7): Chân xả, giúp xả điện tích của tụ điện trong mạch tạo xung, đóng vai trò quan trọng trong cả chế độ astable và monostable.</p>
+<p>OUT (Chân 3): Chân xuất tín hiệu, cung cấp tín hiệu đầu ra (cao hoặc thấp) tùy vào trạng thái của bộ định thời.</p>
+<p>RST - Reset (Chân 4): Chân reset, dùng để đặt lại NE555 về mức thấp khi được kéo xuống 0V. Nếu không dùng, chân này thường được nối lên VCC.</p>
+<p>THRS - Threshold (Chân 6): Chân ngưỡng, so sánh điện áp của tụ điện với 2/3 VCC. Khi điện áp tụ vượt qua mức này, đầu ra sẽ chuyển trạng thái.</p>
+<p>TRIG - Trigger(Chân 2): Chân kích, khi điện áp giảm xuống dưới 1/3 VCC, NE555 sẽ kích hoạt và đưa đầu ra lên mức cao, bắt đầu một chu kỳ.</p>
+<p>CV - Control Voltage (Chân 5): Chân điều khiển điện áp, cho phép điều chỉnh điện áp tham chiếu bên trong. Thường được nối với đất qua một tụ điện để tăng độ ổn định.</p>
+<p>Xung clock này đóng vai trò tạo ra các hiệu ứng nhấp nháy của LED. VD: Nếu bạn muốn LED sáng theo kiểu từ trái sang phải, dữ liệu nạp vào mạch điều khiển LED có thể là: 00000001 → 00000010 → 00000100 → ... Mỗi xung clock sẽ đẩy từng bit này qua, làm LED sáng lần lượt.  Tần số xung clock càng lớn thì hiệu ứng nhấp nháy càng nhanh.</p>
+<p>Từ đó, ta nhận thấy điểm thú vị của mạch này là bạn có thể thay đổi hiệu ứng của các LED bằng cách điều chỉnh tần số của xung clock tại ngõ ra NE555.</p>
+</section>
+<section id="mach-dieu-khien-led">
+<h2>Mạch điều khiển LED<a class="headerlink" href="#mach-dieu-khien-led" title="Permalink to this heading"></a></h2>
+<p>Mạch này có nhiệm vụ nhận dữ liệu từ mạch tạo xung và điều khiển LED sáng tương ứng. Mạch này sử dụng IC ghi dịch 74HC595 để ghi dữ liệu vào các LED. Mỗi bit của dữ liệu sẽ tương ứng với một LED. VD: 00000001 → LED 1 sáng, 00000010 → LED 2 sáng, ... Điều đặc biệt là mạch này có thể điều khiển nhiều LED cùng một lúc, giúp tạo ra các hiệu ứng nhấp nháy phức tạp. Để làm được điều này, các IC 74HC595 được kết nối theo kiểu daisy-chain, tức là dữ liệu từ mạch tạo xung sẽ được ghi vào IC đầu tiên, sau đó từ IC này sẽ được chuyển tiếp sang IC tiếp theo, và cứ tiếp tục như vậy cho đến khi dữ liệu đã gửi đủ, ngay khi có tín hiệu kích hoạt tại chân LATCH, các IC sẽ cập nhật trạng thái của các LED.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Mạch trái tim" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Thuc_hien/index.html" class="btn btn-neutral float-right" title="Thực hiện" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Tuan.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
