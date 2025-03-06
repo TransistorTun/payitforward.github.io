@@ -56,7 +56,7 @@ sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
 urllib3==1.26.9
     # via requests
-furo==2021.11.16
+# furo==2021.11.16
 
 sphinx-copybutton
 
