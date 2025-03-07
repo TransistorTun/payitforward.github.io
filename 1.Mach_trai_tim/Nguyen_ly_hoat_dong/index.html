@@ -111,6 +111,7 @@
 <li><p>Khối phần tử nhớ: gồm chốt SR (khoanh đỏ) đóng vai trò lưu trữ trạng thái thông tin. Trạng thái của ngõ ra Q phụ thuộc vào trạng thái ngõ vào của chân S và R. Trạng thái của ngõ ra <span class="math notranslate nohighlight">\(\overline{Q}\)</span> là ngõ ra đảo của Q.</p></li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/ne555_latch_sr.png"><img alt="Priority" class="align-center" src="../../_images/ne555_latch_sr.png" style="width: 571.0px; height: 427.0px;" /></a>
+<p>Bảng chân trị của chốt SR:</p>
 <a class="reference internal image-reference" href="../../_images/latch_sr_truth_table.png"><img alt="Priority" class="align-center" src="../../_images/latch_sr_truth_table.png" style="width: 412.0px; height: 260.0px;" /></a>
 <ul class="simple">
 <li><p>Khối cổng logic: thường nhà sản xuất sẽ nối chân OUTPUT với ngõ ra Q của chốt SR, tuy nhiên có vài trường hợp, ngõ ra <span class="math notranslate nohighlight">\(\overline{Q}\)</span> sẽ qua một cổng NOT và kết nối với chân OUTPUT. Nhiệm vụ của cổng NOT đơn giản là đảo trạng thái của ngõ vào và đưa ra ngõ ra.</p></li>
@@ -121,17 +122,29 @@
 </section>
 <section id="mach-dieu-khien-led">
 <h2>Mạch điều khiển LED<a class="headerlink" href="#mach-dieu-khien-led" title="Permalink to this heading"></a></h2>
-<p>Mạch này có nhiệm vụ nhận dữ liệu từ mạch tạo xung và điều khiển LED sáng tương ứng. Mạch này sử dụng IC ghi dịch 74HC595 để ghi dữ liệu vào các LED. Mỗi bit của dữ liệu sẽ tương ứng với một LED. VD: 00000001 → LED 1 sáng, 00000010 → LED 2 sáng, ... Điều đặc biệt là mạch này có thể điều khiển nhiều LED cùng một lúc, giúp tạo ra các hiệu ứng nhấp nháy phức tạp. IC 74HC595 là một thanh ghi dịch 8 bit kèm theo một thanh ghi chốt (latch) giúp mở rộng số chân đầu ra của vi điều khiển. Nó thường được sử dụng để điều khiển nhiều LED, màn hình 7 đoạn, hoặc các thiết bị cần nhiều chân I/O. Cấu tạo chính của 74HC595:</p>
+<p>Mạch này có nhiệm vụ nhận dữ liệu từ mạch tạo xung và điều khiển LED sáng tương ứng. Mạch này sử dụng IC ghi dịch 74HC595 để ghi dữ liệu vào các LED. Mỗi bit của dữ liệu sẽ tương ứng với một LED. VD: 00000001 → LED 1 sáng, 00000010 → LED 2 sáng, ... Điều đặc biệt là mạch này có thể điều khiển nhiều LED cùng một lúc, giúp tạo ra các hiệu ứng nhấp nháy phức tạp. IC 74HC595 là một thanh ghi dịch 8 bit kèm theo một thanh ghi chốt (latch) giúp mở rộng số chân đầu ra của vi điều khiển. Nó thường được sử dụng để điều khiển nhiều LED, màn hình 7 đoạn, hoặc các thiết bị cần nhiều chân I/O.</p>
+<a class="reference internal image-reference" href="../../_images/hc595_pinout.png"><img alt="Priority" class="align-center" src="../../_images/hc595_pinout.png" style="width: 284.40000000000003px; height: 279.90000000000003px;" /></a>
+<p>Cấu tạo chính của 74HC595:</p>
 <ul class="simple">
-<li><p>DS (Data Serial, Chân 14): Chân dữ liệu nối tiếp, dùng để nhận dữ liệu.</p></li>
-<li><p>SHCP (Shift Clock, Chân 11): Chân xung clock để dịch dữ liệu vào. Mỗi xung clock, dữ liệu ở DS sẽ được đẩy vào hàng đợi.</p></li>
-<li><p>STCP (Storage Clock, Chân 12): Chân chốt (latch). Khi có cạnh lên ở chân này, dữ liệu từ thanh ghi dịch sẽ được chốt sang thanh ghi lưu trữ và đưa ra các chân đầu ra Q0-Q7.</p></li>
-<li><p>OE (Output Enable, Chân 13): Cho phép hoặc vô hiệu hóa đầu ra (mức thấp để kích hoạt đầu ra).</p></li>
-<li><p>MR (Master Reset, Chân 10): Reset toàn bộ thanh ghi nếu kéo xuống mức thấp.</p></li>
-<li><p>Q0-Q7 (Chân 15, 1-7): 8 chân đầu ra song song.</p></li>
-<li><p>Q7’ (Chân 9): Đầu ra nối tiếp, dùng để kết nối với IC 74HC595 khác để mở rộng số đầu ra.</p></li>
-<li><p>VCC (Chân 16): Nguồn dương (4.5V - 5.5V).</p></li>
-<li><p>GND (Chân 8): Nối đất.</p></li>
+<li><p>16 (VCC) và 8 (GND): cấp nguồn cho IC.</p></li>
+<li><p>14 (SER): chân dữ liệu đầu vào.</p></li>
+<li><p>13 (OE): chân kích hoạt đầu ra.</p></li>
+<li><p>12 (SRCLK): khi có cạnh lên vào chân này, dữ liệu tại SER được đưa vào thanh ghi.</p></li>
+<li><p>11 (RCLK): khi có cạnh lên vào chân này, các dữ liệu trong thanh ghi sẽ đẩy ra các ngõ ra.</p></li>
+<li><p>10 (<span class="math notranslate nohighlight">\(\overline{SRCLR}\)</span>): khi mức logic của chân này ở mức thấp, xóa dữ liệu trong thanh ghi.</p></li>
+<li><p>9 (<span class="math notranslate nohighlight">\(Q_H'\)</span>): chân đầu ra của thanh ghi dịch.</p></li>
+<li><p>1, 2, 3, 4, 5, 6, 7, 15: các chân ngõ ra <span class="math notranslate nohighlight">\(Q_A \rightarrow Q_H\)</span>.</p></li>
+</ul>
+<p>Nguyên lý hoạt đông của 74HC595 dựa trên cơ chế ghi và dịch dữ liệu trong thanh ghi. VD: Khi SER đang có mức logic 0, lúc này IC sẽ chờ cạnh lên của SRCLK để đưa bit 0 này vào thanh ghi. Lúc này thanh ghi sẽ dịch trái sang 1 bit.</p>
+<a class="reference internal image-reference" href="../../_images/hc595_function_1.png"><img alt="Priority" class="align-center" src="../../_images/hc595_function_1.png" style="width: 686.7px; height: 230.4px;" /></a>
+<p>Khi cạnh lên của RCLK xuất hiện và mức logic ở chân <span class="math notranslate nohighlight">\(\overline{OE} = 0\)</span>, dữ liệu trong thanh ghi sẽ được đẩy ra các ngõ ra <span class="math notranslate nohighlight">\(Q_A \rightarrow Q_H\)</span>.</p>
+<a class="reference internal image-reference" href="../../_images/hc595_function_2.png"><img alt="Priority" class="align-center" src="../../_images/hc595_function_2.png" style="width: 981.0px; height: 314.1px;" /></a>
+<p>Nguyên lý hoạt động của 74HC595 rất đơn giản nhưng cũng cần lưu ý một số điều như sau:</p>
+<ul class="simple">
+<li><p>Chân <span class="math notranslate nohighlight">\(\overline{OE}\)</span>: dùng để kích hoạt đầu ra, khi mức logic ở chân này ở mức cao, tất cả các ngõ ra sẽ ở mức logic 0.</p></li>
+<li><p>Nếu RCLK và SRCLK có cạnh lên cùng lúc thì IC sẽ thực hiện RCLK trước rồi tới SRCLK.</p></li>
+<li><p>Chân <span class="math notranslate nohighlight">\(\overline{SRCLR}\)</span>: chân reset bất đồng bộ.</p></li>
+<li><p>Khi nối các 74HC595 với nhau cần nối theo cấu trúc daisy-chain: chân <span class="math notranslate nohighlight">\(Q_H'\)</span> của IC trước sẽ nối với chân SER của IC sau và <span class="math notranslate nohighlight">\(Q_A\)</span> của IC sau bằng <span class="math notranslate nohighlight">\(Q_H'\)</span>.</p></li>
 </ul>
 </section>
 </section>
