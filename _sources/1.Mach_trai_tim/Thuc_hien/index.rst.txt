@@ -205,22 +205,83 @@ Các bước thực hiện:
 
     - **Bước 1**: Chuẩn bị mạch in trên giấy bóng: Sau khi vẽ PCB trên phần mềm, xuất file để in mạch trên giấy bóng
 
+    .. image:: img/Picture1.jpg
+        :width: 100%
+        :alt: Image 3
+    
+    .. raw:: html
+
+        <div style="margin-top: 20px;"></div>
+
     .. note:: Lưu ý, phải dùng máy in laser mới được, nên ra hỏi tiệm in xem người ta có in được giấy in mạch không
 
     - **Bước 2**: Cắt và vệ sinh phíp đồng: Đo kích thước mạch và cắt, nên để dư 3 - 5mm. Nên đánh dấu vị trí khu vực cần cắt. Sử dụng đầu nhọn của lưỡi dao để cắt từng cạnh (ở cả 2 mặt). Sau khi cắt đủ sâu có thể bẻ. Phíp đồng cần được vệ sinh để mực in trong quá trình chuyển mạch có thể chuyển lên hết PCB . Vệ sinh bằng cách chà giấy nhàm, sau khi chà không đặt tay lên bề mặt 
     
+    .. image:: img/Picture2.png
+        :width: 100%
+        :alt: Image 3
+    
+    .. raw:: html
+
+        <div style="margin-top: 20px;"></div>
+
     - **Bước 3**: Chuyển mạch (toner transfer): Cắt mạch in trên giấy bóng và đặt lên phíp đồng đã cắt và vệ sinh (mặt in mực tiếp xúc với mạch đồng) rồi tiến hành ủi mạch đến khi đảm bảo lớp mực trên giấy đã bám hết lên phíp đồng. Nhiệt từ bàn ủi sẽ làm chảy lớp mực trên giấy bóng và chuyển xuống mặt đồng, bảo vệ những khu vực mà ta mong muốn không bị ăn mòn
+
+    .. image:: img/Picture3.jpg
+        :width: 100%
+        :alt: Image 3
+    
+    .. raw:: html
+
+        <div style="margin-top: 20px;"></div>
 
     .. note:: Lưu ý, trong quá trình ủi, có thể do tác dụng nhiệt không đều hoặc vệ sinh phíp đồng không sạch mà có vài mảng mực sẽ không bám lên phíp đồng, ta dùng bút lông dầu để tô lại
     
     - **Bước 4**: Ăn mòn (Etching) Đem mạch đi nhúng với dung dịch ăn mòn, đến khi lớp đồng không được phủ mực bị rửa trôi hết. Những phần không được mực in bảo vệ sẽ bị ăn mòn, chỉ chừa lại đường mạch mong muốn. Trong quá trình nhúng nên lắc board mạch để tăng tốc độ phản ứng (có thể dùng nhíp để lắc board mạch hoặc khoan lỗ ở một góc và xỏ dây vào)
     
+    .. image:: img/Picture4.jpg
+        :width: 100%
+        :alt: Image 3
+    
+    .. raw:: html
+
+        <div style="margin-top: 20px;"></div>
+
     .. note:: Lưu ý, để đảm bảo an toàn cho bản thân và môi trường khi sử dụng hóa chất, không đổ hóa chất ăn mòn xuống cống
     
     - **Bước 5**: Vệ sinh, khoan lỗ và bảo quản mạch: Sau khi ngâm mạch, dung dịch ăn mòn không tác dụng tới lớp mực, để loại bỏ lớp mực này, ta dùng giấy nhám để chà sạch hoặc dùng axeton để lau đi. Đối với các linh kiện chân cắm, lựa chọn mũi khoan có kích thước thích hợp (mũi khoan: 0.8mm - 1mm). Lớp đồng để lâu trong không khí sẽ bị oxy hóa gây mất thẩm mỹ, do đó ta trộn axetol và nhựa thông lại để phủ lên PCB
 
+    .. image:: img/Picture5.png
+        :width: 40%
+        :alt: Image 3
 
-Bước 5: Nhìn ngắm thành quả
+    .. image:: img/Picture6.jpg
+        :width: 50%
+        :alt: Image 3
+    
+    .. raw:: html
+
+        <div style="margin-top: 20px;"></div>
+
+
+Bước 5: Hàn mạch
+----------------------------------
+
+- Hướng dẫn hàn: 
+
+    - Tham khảo link sau: `Link hướng dẫn hàn <https://www.youtube.com/watch?v=Qps9woUGkvI>`_
+
+- Thứ tự hàn:
+    - Hàn theo khối:
+        - Nên hàn khối nguồn trước, sau đó test điện áp ngõ ra của khối nguồn. 
+        - Tiếp tục hàn các khối khác. 
+    - Hàn theo loại linh kiện: 
+        - Hàn linh kiện dán trước, sau đó hàn linh kiện cắm. 
+        - Hàn linh kiện nhỏ trước, sau đó hàn linh kiện lớn. 
+        - Hàn linh kiện nhiều chân trước (những IC từ 5 chân trở lên).
+    - Hàn từ trong ra ngoài, tránh vướng mỏ hàn khi hàn. 
+
+Bước 6: Nhìn ngắm thành quả
 ----------------------------------
 
 .. video:: video/video.mp4
