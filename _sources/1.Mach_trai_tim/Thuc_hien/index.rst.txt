@@ -27,13 +27,25 @@ Tuy nhiên, trước khi bắt đầu làm mạch này, bạn cần trang bị m
 Bước 2: Lên danh sách linh kiện
 ----------------------------------
 
-.. raw:: html
+.. .. raw:: html
 
-    <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-        <img src="img/2.avif" alt="Image 1" style="width: 30%;">
-        <img src="img/3.webp" alt="Image 2" style="width: 30%;">
-        <img src="img/4.jpg" alt="Image 3" style="width: 30%;">
-    </div>
+..     <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+..         <img src="img\2.avif" alt="Image 1" style="width: 30%;">
+..         <img src="img/3.webp" alt="Image 2" style="width: 30%;">
+..         <img src="img/4.jpg" alt="Image 3" style="width: 30%;">
+..     </div>
+
+.. image:: img/2.avif
+    :width: 30%
+    :alt: Image 1
+
+.. image:: img/3.webp
+    :width: 30%
+    :alt: Image 2
+
+.. image:: img/4.jpg
+    :width: 30%
+    :alt: Image 3
 
 - 1 Phíp đồng
 - 2 x 74HC595 (SOP-16) -> thêm IC 
@@ -76,10 +88,17 @@ Lưu ý, để đảm bảo an toàn cho bản thân và môi trường khi sử
 Thành quả:
 ----------------------------------
 
-.. raw:: html
+.. .. raw:: html
 
-    <video width="640" height="360" controls>
-        <source src="_static/video.mp4" type="video/mp4">
-        Trình duyệt của bạn không hỗ trợ video.
-    </video>
+..     <video width="640" height="360" controls>
+..         <source src="_static/video.mp4" type="video/mp4">
+..     </video>
 
+.. video:: video/video.mp4
+    :width: 640
+    :height: 360
+    :nocontrols:
+    :autoplay:
+    :playsinline:
+    :muted:
+    :loop:
