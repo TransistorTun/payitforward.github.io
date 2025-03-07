@@ -20,6 +20,9 @@ Giới thiệu về IC NE555 — một IC quen thuộc, thường dùng để t�
    :align: center
    :alt: Priority
    :scale: 100%
+.. raw:: html
+
+   <div style="margin-top: 20px;"></div>
 
 Từ sơ đồ khối, ta cùng tìm hiểu chức năng từng khối bên trong NE555:
 
@@ -29,6 +32,9 @@ Từ sơ đồ khối, ta cùng tìm hiểu chức năng từng khối bên tron
    :align: center
    :alt: Priority
    :scale: 100%
+.. raw:: html
+
+   <div style="margin-top: 20px;"></div>
 
 - Khối phần tử nhớ: gồm chốt SR (khoanh đỏ) đóng vai trò lưu trữ trạng thái thông tin. Trạng thái của ngõ ra Q phụ thuộc vào trạng thái ngõ vào của chân S và R. Trạng thái của ngõ ra :math:`\overline{Q}` là ngõ ra đảo của Q.
 
@@ -36,6 +42,9 @@ Từ sơ đồ khối, ta cùng tìm hiểu chức năng từng khối bên tron
    :align: center
    :alt: Priority
    :scale: 100%
+.. raw:: html
+
+   <div style="margin-top: 20px;"></div>
 
 Bảng chân trị của chốt SR:
 
@@ -43,6 +52,9 @@ Bảng chân trị của chốt SR:
    :align: center
    :alt: Priority
    :scale: 100%
+.. raw:: html
+
+   <div style="margin-top: 20px;"></div>
 
 - Khối cổng logic: thường nhà sản xuất sẽ nối chân OUTPUT với ngõ ra Q của chốt SR, tuy nhiên có vài trường hợp, ngõ ra :math:`\overline{Q}` sẽ qua một cổng NOT và kết nối với chân OUTPUT. Nhiệm vụ của cổng NOT đơn giản là đảo trạng thái của ngõ vào và đưa ra ngõ ra.
 
@@ -52,7 +64,9 @@ Từ đó, ta có thể suy ra bảng chân trị cho NE555 như sau:
    :align: center
    :alt: Priority
    :scale: 90%
+.. raw:: html
 
+   <div style="margin-top: 20px;"></div>
 
 Như vậy, từ sơ đồ khối, ta nhận thấy có thể dùng NE555 tạo xung clock bằng cách thay đổi điện áp trên chân Trigger và Threshold.
 
@@ -64,6 +78,9 @@ Mạch này có nhiệm vụ nhận dữ liệu từ mạch tạo xung và đi�
    :align: center
    :alt: Priority
    :scale: 90%
+.. raw:: html
+
+   <div style="margin-top: 20px;"></div>
 
 
 Cấu tạo chính của 74HC595:
@@ -82,14 +99,20 @@ Nguyên lý hoạt đông của 74HC595 dựa trên cơ chế ghi và dịch d�
 .. image:: img/hc595_function_1.png
    :align: center
    :alt: Priority
-   :scale: 90%
+   :scale: 80%
+.. raw:: html
+
+   <div style="margin-top: 20px;"></div>
 
 Khi cạnh lên của RCLK xuất hiện và mức logic ở chân :math:`\overline{OE} = 0`, dữ liệu trong thanh ghi sẽ được đẩy ra các ngõ ra :math:`Q_A \rightarrow Q_H`.
 
 .. image:: img/hc595_function_2.png
    :align: center
    :alt: Priority
-   :scale: 90%
+   :scale: 60%
+.. raw:: html
+
+   <div style="margin-top: 20px;"></div>
 
 Nguyên lý hoạt động của 74HC595 rất đơn giản nhưng cũng cần lưu ý một số điều như sau:
 
