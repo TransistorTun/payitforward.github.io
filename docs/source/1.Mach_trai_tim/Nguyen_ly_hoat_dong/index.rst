@@ -1,20 +1,20 @@
 Nguyên lý hoạt động
 *******************************************************************************
-Mạch LED trái tim thường được thiết kế để tạo ra hiệu ứng nhấp nháy hoặc "chạy" LED theo các mẫu nhất định. Mạch này sử dụng một số linh kiện cơ bản như: IC tạo xung NE555, IC ghi dịch 74HC595, LED, điện trở, tụ điện,... Mạch được tạo thành từ hai phần chính: mạch tạo xung và mạch điều khiển LED.
+Mạch LED trái tim thường được thiết kế để tạo ra hiệu ứng nhấp nháy hoặc "chạy" LED theo các mẫu nhất định. Mạch này sử dụng một số linh kiện cơ bản như: **IC tạo xung NE555, IC ghi dịch 74HC595, LED, điện trở, tụ điện,..**. Mạch được tạo thành từ hai phần chính: **mạch tạo xung** và **mạch điều khiển LED**.
 
 Mạch tạo xung
 ------------------------
-Mạch này có nhiệm vụ tạo ra các xung clock liên tục để điều khiển quá trình ghi dịch dữ liệu trong mạch bằng việc cấu hình NE555 ở chế độ astable. Tần số của các xung này phụ thuộc vào các điện trở và tụ điện được cấu hình cho NE555.
+Mạch này có nhiệm vụ tạo ra các xung clock liên tục để điều khiển quá trình ghi dịch dữ liệu trong mạch bằng việc cấu hình NE555 ở **chế độ astable**. Tần số của các xung này phụ thuộc vào các điện trở và tụ điện được cấu hình cho NE555.
 
 Giới thiệu về IC NE555 — một IC quen thuộc, thường dùng để tạo xung clock. Dưới đây là chức năng của từng chân:
 
-- 1 (GND) và 8 (VCC): dùng để cấp nguồn cho IC.
-- 2 (Trigger): chân ngõ vào so áp với áp chuẩn là :math:`1/3 VCC`
-- 3 (Output): chân ngõ ra tín hiệu.
-- 4 (Reset): reset trạng thái ngõ ra, để IC  có thể tạo xung, cần nối chân này với VCC.
-- 5 (Control Voltage): chân này dùng để điều chỉnh độ rộng xung, chân này có thể không kết nối.
-- 6 (Threshold): chân ngõ vào so áp với áp chuẩn là :math:`2/3 VCC`.
-- 7 (Discharge): chân này được nối với cực C của BJT bên trong IC, dùng để xả điện.
+- **1 (GND) và 8 (VCC)**: dùng để cấp nguồn cho IC.
+- **2 (Trigger)**: chân ngõ vào so áp với áp chuẩn là :math:`1/3 VCC`
+- **3 (Output)**: chân ngõ ra tín hiệu.
+- **4 (Reset)**: reset trạng thái ngõ ra, để IC  có thể tạo xung, cần nối chân này với VCC.
+- **5 (Control Voltage)**: chân này dùng để điều chỉnh độ rộng xung, chân này có thể không kết nối.
+- **6 (Threshold)**: chân ngõ vào so áp với áp chuẩn là :math:`2/3 VCC`.
+- **7 (Discharge)**: chân này được nối với cực C của BJT bên trong IC, dùng để xả điện.
 
 .. image:: img/ne555_block_diagram.png
    :align: center
@@ -68,14 +68,14 @@ Mạch này có nhiệm vụ nhận dữ liệu từ mạch tạo xung và đi�
 
 Cấu tạo chính của 74HC595:
 
-- 16 (VCC) và 8 (GND): cấp nguồn cho IC.
-- 14 (SER): chân dữ liệu đầu vào.
-- 13 (OE): chân kích hoạt đầu ra.
-- 12 (SRCLK): khi có cạnh lên vào chân này, dữ liệu tại SER được đưa vào thanh ghi.
-- 11 (RCLK): khi có cạnh lên vào chân này, các dữ liệu trong thanh ghi sẽ đẩy ra các ngõ ra.
-- 10 (:math:`\overline{SRCLR}`): khi mức logic của chân này ở mức thấp, xóa dữ liệu trong thanh ghi.
-- 9 (:math:`Q_H'`): chân đầu ra của thanh ghi dịch.
-- 1, 2, 3, 4, 5, 6, 7, 15: các chân ngõ ra :math:`Q_A \rightarrow Q_H`.
+- **16 (VCC) và 8 (GND)**: cấp nguồn cho IC.
+- **14 (SER)**: chân dữ liệu đầu vào.
+- **13 (OE)**: chân kích hoạt đầu ra.
+- **12 (SRCLK)**: khi có cạnh lên vào chân này, dữ liệu tại SER được đưa vào thanh ghi.
+- **11 (RCLK)**: khi có cạnh lên vào chân này, các dữ liệu trong thanh ghi sẽ đẩy ra các ngõ ra.
+- **10** (:math:`\overline{SRCLR}`): khi mức logic của chân này ở mức thấp, xóa dữ liệu trong thanh ghi.
+- **9** (:math:`Q_H'`): chân đầu ra của thanh ghi dịch.
+- **1, 2, 3, 4, 5, 6, 7, 15**: các chân ngõ ra :math:`Q_A \rightarrow Q_H`.
 
 Nguyên lý hoạt đông của 74HC595 dựa trên cơ chế ghi và dịch dữ liệu trong thanh ghi. VD: Khi SER đang có mức logic 0, lúc này IC sẽ chờ cạnh lên của SRCLK để đưa bit 0 này vào thanh ghi. Lúc này thanh ghi sẽ dịch trái sang 1 bit.
 
@@ -94,6 +94,6 @@ Khi cạnh lên của RCLK xuất hiện và mức logic ở chân :math:`\overl
 Nguyên lý hoạt động của 74HC595 rất đơn giản nhưng cũng cần lưu ý một số điều như sau:
 
 - Chân :math:`\overline{OE}`: dùng để kích hoạt đầu ra, khi mức logic ở chân này ở mức cao, tất cả các ngõ ra sẽ ở mức logic 0.
-- Nếu RCLK và SRCLK có cạnh lên cùng lúc thì IC sẽ thực hiện RCLK trước rồi tới SRCLK.
+- Nếu RCLK và SRCLK có cạnh lên cùng lúc thì IC sẽ thực hiện RCLK **trước** rồi tới SRCLK.
 - Chân :math:`\overline{SRCLR}`: chân reset bất đồng bộ.
-- Khi nối các 74HC595 với nhau cần nối theo cấu trúc daisy-chain: chân :math:`Q_H'` của IC trước sẽ nối với chân SER của IC sau và :math:`Q_A` của IC sau bằng :math:`Q_H'`. 
+- Khi nối các 74HC595 với nhau cần nối theo cấu trúc **daisy-chain**: chân :math:`Q_H'` của IC trước sẽ nối với chân SER của IC sau và :math:`Q_A` của IC sau bằng :math:`Q_H'`. 
