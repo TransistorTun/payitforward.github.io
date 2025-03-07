@@ -87,19 +87,19 @@
              
   <section id="nguyen-ly-hoat-dong">
 <h1>Nguyên lý hoạt động<a class="headerlink" href="#nguyen-ly-hoat-dong" title="Permalink to this heading"></a></h1>
-<p>Mạch LED trái tim thường được thiết kế để tạo ra hiệu ứng nhấp nháy hoặc &quot;chạy&quot; LED theo các mẫu nhất định. Mạch này sử dụng một số linh kiện cơ bản như: IC tạo xung NE555, IC ghi dịch 74HC595, LED, điện trở, tụ điện,... Mạch được tạo thành từ hai phần chính: mạch tạo xung và mạch điều khiển LED.</p>
+<p>Mạch LED trái tim thường được thiết kế để tạo ra hiệu ứng nhấp nháy hoặc &quot;chạy&quot; LED theo các mẫu nhất định. Mạch này sử dụng một số linh kiện cơ bản như: <strong>IC tạo xung NE555, IC ghi dịch 74HC595, LED, điện trở, tụ điện,..</strong>. Mạch được tạo thành từ hai phần chính: <strong>mạch tạo xung</strong> và <strong>mạch điều khiển LED</strong>.</p>
 <section id="mach-tao-xung">
 <h2>Mạch tạo xung<a class="headerlink" href="#mach-tao-xung" title="Permalink to this heading"></a></h2>
-<p>Mạch này có nhiệm vụ tạo ra các xung clock liên tục để điều khiển quá trình ghi dịch dữ liệu trong mạch bằng việc cấu hình NE555 ở chế độ astable. Tần số của các xung này phụ thuộc vào các điện trở và tụ điện được cấu hình cho NE555.</p>
+<p>Mạch này có nhiệm vụ tạo ra các xung clock liên tục để điều khiển quá trình ghi dịch dữ liệu trong mạch bằng việc cấu hình NE555 ở <strong>chế độ astable</strong>. Tần số của các xung này phụ thuộc vào các điện trở và tụ điện được cấu hình cho NE555.</p>
 <p>Giới thiệu về IC NE555 — một IC quen thuộc, thường dùng để tạo xung clock. Dưới đây là chức năng của từng chân:</p>
 <ul class="simple">
-<li><p>1 (GND) và 8 (VCC): dùng để cấp nguồn cho IC.</p></li>
-<li><p>2 (Trigger): chân ngõ vào so áp với áp chuẩn là <span class="math notranslate nohighlight">\(1/3 VCC\)</span></p></li>
-<li><p>3 (Output): chân ngõ ra tín hiệu.</p></li>
-<li><p>4 (Reset): reset trạng thái ngõ ra, để IC  có thể tạo xung, cần nối chân này với VCC.</p></li>
-<li><p>5 (Control Voltage): chân này dùng để điều chỉnh độ rộng xung, chân này có thể không kết nối.</p></li>
-<li><p>6 (Threshold): chân ngõ vào so áp với áp chuẩn là <span class="math notranslate nohighlight">\(2/3 VCC\)</span>.</p></li>
-<li><p>7 (Discharge): chân này được nối với cực C của BJT bên trong IC, dùng để xả điện.</p></li>
+<li><p><strong>1 (GND) và 8 (VCC)</strong>: dùng để cấp nguồn cho IC.</p></li>
+<li><p><strong>2 (Trigger)</strong>: chân ngõ vào so áp với áp chuẩn là <span class="math notranslate nohighlight">\(1/3 VCC\)</span></p></li>
+<li><p><strong>3 (Output)</strong>: chân ngõ ra tín hiệu.</p></li>
+<li><p><strong>4 (Reset)</strong>: reset trạng thái ngõ ra, để IC  có thể tạo xung, cần nối chân này với VCC.</p></li>
+<li><p><strong>5 (Control Voltage)</strong>: chân này dùng để điều chỉnh độ rộng xung, chân này có thể không kết nối.</p></li>
+<li><p><strong>6 (Threshold)</strong>: chân ngõ vào so áp với áp chuẩn là <span class="math notranslate nohighlight">\(2/3 VCC\)</span>.</p></li>
+<li><p><strong>7 (Discharge)</strong>: chân này được nối với cực C của BJT bên trong IC, dùng để xả điện.</p></li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/ne555_block_diagram.png"><img alt="Priority" class="align-center" src="../../_images/ne555_block_diagram.png" style="width: 565.0px; height: 418.0px;" /></a>
 <p>Từ sơ đồ khối, ta cùng tìm hiểu chức năng từng khối bên trong NE555:</p>
@@ -126,14 +126,14 @@
 <a class="reference internal image-reference" href="../../_images/hc595_pinout.png"><img alt="Priority" class="align-center" src="../../_images/hc595_pinout.png" style="width: 284.40000000000003px; height: 279.90000000000003px;" /></a>
 <p>Cấu tạo chính của 74HC595:</p>
 <ul class="simple">
-<li><p>16 (VCC) và 8 (GND): cấp nguồn cho IC.</p></li>
-<li><p>14 (SER): chân dữ liệu đầu vào.</p></li>
-<li><p>13 (OE): chân kích hoạt đầu ra.</p></li>
-<li><p>12 (SRCLK): khi có cạnh lên vào chân này, dữ liệu tại SER được đưa vào thanh ghi.</p></li>
-<li><p>11 (RCLK): khi có cạnh lên vào chân này, các dữ liệu trong thanh ghi sẽ đẩy ra các ngõ ra.</p></li>
-<li><p>10 (<span class="math notranslate nohighlight">\(\overline{SRCLR}\)</span>): khi mức logic của chân này ở mức thấp, xóa dữ liệu trong thanh ghi.</p></li>
-<li><p>9 (<span class="math notranslate nohighlight">\(Q_H'\)</span>): chân đầu ra của thanh ghi dịch.</p></li>
-<li><p>1, 2, 3, 4, 5, 6, 7, 15: các chân ngõ ra <span class="math notranslate nohighlight">\(Q_A \rightarrow Q_H\)</span>.</p></li>
+<li><p><strong>16 (VCC) và 8 (GND)</strong>: cấp nguồn cho IC.</p></li>
+<li><p><strong>14 (SER)</strong>: chân dữ liệu đầu vào.</p></li>
+<li><p><strong>13 (OE)</strong>: chân kích hoạt đầu ra.</p></li>
+<li><p><strong>12 (SRCLK)</strong>: khi có cạnh lên vào chân này, dữ liệu tại SER được đưa vào thanh ghi.</p></li>
+<li><p><strong>11 (RCLK)</strong>: khi có cạnh lên vào chân này, các dữ liệu trong thanh ghi sẽ đẩy ra các ngõ ra.</p></li>
+<li><p><strong>10</strong> (<span class="math notranslate nohighlight">\(\overline{SRCLR}\)</span>): khi mức logic của chân này ở mức thấp, xóa dữ liệu trong thanh ghi.</p></li>
+<li><p><strong>9</strong> (<span class="math notranslate nohighlight">\(Q_H'\)</span>): chân đầu ra của thanh ghi dịch.</p></li>
+<li><p><strong>1, 2, 3, 4, 5, 6, 7, 15</strong>: các chân ngõ ra <span class="math notranslate nohighlight">\(Q_A \rightarrow Q_H\)</span>.</p></li>
 </ul>
 <p>Nguyên lý hoạt đông của 74HC595 dựa trên cơ chế ghi và dịch dữ liệu trong thanh ghi. VD: Khi SER đang có mức logic 0, lúc này IC sẽ chờ cạnh lên của SRCLK để đưa bit 0 này vào thanh ghi. Lúc này thanh ghi sẽ dịch trái sang 1 bit.</p>
 <a class="reference internal image-reference" href="../../_images/hc595_function_1.png"><img alt="Priority" class="align-center" src="../../_images/hc595_function_1.png" style="width: 686.7px; height: 230.4px;" /></a>
@@ -142,9 +142,9 @@
 <p>Nguyên lý hoạt động của 74HC595 rất đơn giản nhưng cũng cần lưu ý một số điều như sau:</p>
 <ul class="simple">
 <li><p>Chân <span class="math notranslate nohighlight">\(\overline{OE}\)</span>: dùng để kích hoạt đầu ra, khi mức logic ở chân này ở mức cao, tất cả các ngõ ra sẽ ở mức logic 0.</p></li>
-<li><p>Nếu RCLK và SRCLK có cạnh lên cùng lúc thì IC sẽ thực hiện RCLK trước rồi tới SRCLK.</p></li>
+<li><p>Nếu RCLK và SRCLK có cạnh lên cùng lúc thì IC sẽ thực hiện RCLK <strong>trước</strong> rồi tới SRCLK.</p></li>
 <li><p>Chân <span class="math notranslate nohighlight">\(\overline{SRCLR}\)</span>: chân reset bất đồng bộ.</p></li>
-<li><p>Khi nối các 74HC595 với nhau cần nối theo cấu trúc daisy-chain: chân <span class="math notranslate nohighlight">\(Q_H'\)</span> của IC trước sẽ nối với chân SER của IC sau và <span class="math notranslate nohighlight">\(Q_A\)</span> của IC sau bằng <span class="math notranslate nohighlight">\(Q_H'\)</span>.</p></li>
+<li><p>Khi nối các 74HC595 với nhau cần nối theo cấu trúc <strong>daisy-chain</strong>: chân <span class="math notranslate nohighlight">\(Q_H'\)</span> của IC trước sẽ nối với chân SER của IC sau và <span class="math notranslate nohighlight">\(Q_A\)</span> của IC sau bằng <span class="math notranslate nohighlight">\(Q_H'\)</span>.</p></li>
 </ul>
 </section>
 </section>
