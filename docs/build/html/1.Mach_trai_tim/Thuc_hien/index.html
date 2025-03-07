@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
     <link sizes="32x32" href="../../_static/favicon.png" rel="icon" type="image/png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thực hiện &mdash; test 0.01 documentation</title>
+  <title>Thực hiện mạch in thủ công (Mạch nhấp nháy LED hình trái tim) &mdash; test 0.01 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -53,11 +53,12 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Mạch trái tim</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Nguyen_ly_hoat_dong/index.html">Nguyên lý hoạt động</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Thực hiện</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#buoc-1-trang-bi-ki-nang-can-thiet">Bước 1: Trang bị kĩ năng cần thiết</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#buoc-2-len-danh-sach-linh-kien">Bước 2: Lên danh sách linh kiện</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#buoc-3-gia-cong-mach">Bước 3: Gia công mạch</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#thanh-qua">Thành quả:</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Thực hiện mạch in thủ công (Mạch nhấp nháy LED hình trái tim)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#buoc-1-thiet-ke-bang-mach-in"><strong>Bước 1</strong>: Thiết kế bảng mạch in</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#buoc-2-trang-bi-ki-nang-can-thiet">Bước 2: Trang bị kĩ năng cần thiết</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#buoc-3-len-danh-sach-linh-kien">Bước 3: Lên danh sách linh kiện</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#buoc-4-gia-cong-mach">Bước 4: Gia công mạch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#buoc-5-nhin-ngam-thanh-qua">Bước 5: Nhìn ngắm thành quả</a></li>
 </ul>
 </li>
 </ul>
@@ -79,7 +80,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Mạch trái tim</a></li>
-      <li class="breadcrumb-item active">Thực hiện</li>
+      <li class="breadcrumb-item active">Thực hiện mạch in thủ công (Mạch nhấp nháy LED hình trái tim)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/1.Mach_trai_tim/Thuc_hien/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -89,13 +90,129 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="thuc-hien">
-<h1>Thực hiện<a class="headerlink" href="#thuc-hien" title="Link to this heading"></a></h1>
-<section id="buoc-1-trang-bi-ki-nang-can-thiet">
-<h2>Bước 1: Trang bị kĩ năng cần thiết<a class="headerlink" href="#buoc-1-trang-bi-ki-nang-can-thiet" title="Link to this heading"></a></h2>
+  <section id="thuc-hien-mach-in-thu-cong-mach-nhap-nhay-led-hinh-trai-tim">
+<h1>Thực hiện mạch in thủ công (Mạch nhấp nháy LED hình trái tim)<a class="headerlink" href="#thuc-hien-mach-in-thu-cong-mach-nhap-nhay-led-hinh-trai-tim" title="Link to this heading"></a></h1>
+<p><strong>Những vật dụng cần chuẩn bị để làm mạch PCB tại nhà:</strong></p>
+<ol class="arabic simple">
+<li><p>Phíp đồng</p></li>
+<li><p>Cuộn phim bóng hoặc giấy bìa tạp chí (Trong bài viết sử dụng cuộn phim bóng)</p></li>
+<li><p>Hóa chất ăn mòn đồng (Ferric Chloride hoặc Hydrogen Peroxide) (Trong bài viết sử dụng Ferric Chloride FeCl3)</p></li>
+<li><p>Bùi nhùi sắt</p></li>
+<li><p>Hai thau hoặc hoặc khay để chứa hóa chất rửa mạch (1 nhỏ và 1 lớn)</p></li>
+<li><p>Một máy khoan cầm tay (một lưỡi cắt nhỏ để cắt mạch)</p></li>
+<li><p>Bút lông</p></li>
+<li><p>Aceton (xăng thơm)</p></li>
+<li><p>Máy in Laser</p></li>
+<li><p>Phần mềm thiết kế PCB trên máy tính</p></li>
+</ol>
+<section id="buoc-1-thiet-ke-bang-mach-in">
+<h2><strong>Bước 1</strong>: Thiết kế bảng mạch in<a class="headerlink" href="#buoc-1-thiet-ke-bang-mach-in" title="Link to this heading"></a></h2>
+<p><strong>Chuẩn bị schematic</strong></p>
+<ul>
+<li><p>Lên ý tưởng và phác thảo sơ bộ: Bạn nên liệt kê những yêu cầu cụ thể cho mạch PCB mà bạn muốn làm. Dựa trên nhu cầu, hãy phác thảo sơ đồ mạch cơ bản trên giấy.</p></li>
+<li><p>Sử dụng tài nguyên có sẵn:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Tìm kiếm trên Internet những mẫu PCB được chia sẻ miễn phí từ các cộng đồng thiết kế. Điều này không chỉ tiết kiệm thời gian mà còn cung cấp những ý tưởng thú vị cho dự án của bạn.</p></li>
+<li><p>Một số trang web và diễn đàn công nghệ thường chia sẻ các tệp thiết kế PCB sẵn sàng để tải xuống.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Dùng phần mềm chuyên dụng: Nếu bạn muốn tạo ra một sơ đồ mạch theo ý tưởng riêng, hãy sử dụng các phần mềm thiết kế PCB phổ biến:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Proteus: Thích hợp cho người mới bắt đầu, với giao diện đơn giản và cộng đồng hỗ trợ rộng rãi.</p></li>
+<li><p>OrCAD và Allegro: Mạnh mẽ, phù hợp cho các dự án phức tạp.</p></li>
+<li><p>Eagle: Được nhiều người yêu thích nhờ tính linh hoạt.</p></li>
+<li><p>Altium Designer: Chuyên nghiệp, phù hợp cho các dự án yêu cầu độ chính xác cao.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lời khuyên cho bước chuẩn bị schematic:</p>
+<p>Hãy dành thời gian để kiểm tra kỹ sơ đồ mạch trước khi chuyển sang bước tiếp theo. Một sơ đồ mạch chính xác là nền tảng để tạo ra một PCB hoàn thiện, giảm thiểu lỗi trong quá trình thực hiện.</p>
+</div>
+<ul class="simple">
+<li><p>Trao đổi với các cộng đồng kỹ thuật trực tuyến (ví dụ: <strong>PIF</strong>) để nhận được góp ý và mẹo từ những người có kinh nghiệm.</p></li>
+</ul>
+<p><strong>Mạch nguyên lý (Schematic) của mạch led trái tim:</strong></p>
+<a class="reference internal image-reference" href="../../_images/led.png"><img alt="Priority" class="align-center" src="../../_images/led.png" style="width: 561.5px; height: 397.0px;" />
+</a>
+<div style="margin-top: 20px;"></div><p><strong>Schematic tại đây:</strong></p>
+<p><a class="reference download internal" download="" href="../../_downloads/a49c10110943134f6814c6de89b2a1e7/Mach_trai_tim.SchDoc"><code class="xref download docutils literal notranslate"><span class="pre">Bấm</span> <span class="pre">để</span> <span class="pre">tải</span> <span class="pre">Schematic</span></code></a></p>
+<p><strong>Layout PCB</strong></p>
+<p>PCB Layout là bước quan trọng giúp bạn chuyển đổi sơ đồ mạch (schematic) thành hình ảnh thực tế của bảng mạch in (PCB). Đây là giai đoạn tạo ra thiết kế cụ thể cho từng lớp mạch, đường dẫn tín hiệu, vị trí linh kiện, và các chi tiết cần thiết để sản xuất PCB.</p>
+<p><strong>Các bước chuẩn bị PCB Layout:</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Nghiên cứu sơ đồ mạch (schematic):</strong></p>
+<p>Trước khi bắt đầu thiết kế layout, hãy đảm bảo sơ đồ mạch đã được kiểm tra kỹ lưỡng. Việc đảm bảo không có lỗi ở sơ đồ mạch sẽ giúp tránh được những vấn đề khi triển khai PCB.</p>
+</div>
+<ul>
+<li><p>Lựa chọn phần mềm thiết kế: Hãy chọn công cụ thiết kế PCB mà bạn cảm thấy quen thuộc và phù hợp với nhu cầu dự án. Một số phần mềm phổ biến:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Proteus: Dễ sử dụng, phù hợp với người mới.</p></li>
+<li><p>Altium Designer: Được sử dụng chuyên nghiệp trong công nghiệp.</p></li>
+<li><p>Eagle: Linh hoạt và được cộng đồng yêu thích.</p></li>
+<li><p>KiCad: Phần mềm mã nguồn mở, đầy đủ tính năng và miễn phí.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Phác thảo bố cục sơ bộ:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Xác định các khu vực chính trên PCB, chẳng hạn như vùng đặt nguồn, vùng xử lý tín hiệu, và vùng chứa linh kiện điều khiển.</p></li>
+<li><p>Ưu tiên sắp xếp các linh kiện có chức năng liên quan gần nhau để giảm độ dài đường dẫn tín hiệu.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Thiết kế đường mạch (Routing):</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Sử dụng các công cụ routing của phần mềm để nối các chân linh kiện theo sơ đồ mạch.</p></li>
+<li><p>Đảm bảo các đường dẫn tín hiệu quan trọng có độ dài ngắn nhất và không bị cắt ngang qua bởi các đường khác.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Kiểm tra thiết kế:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Dùng chức năng DRC (Design Rule Check) của phần mềm để kiểm tra xem thiết kế có tuân thủ các quy định kỹ thuật không.</p></li>
+<li><p>Thực hiện kiểm tra ERC (Electrical Rule Check) để đảm bảo không có lỗi logic trong mạch.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Lời khuyên cho giai đoạn Layout PCB</strong></p>
+<ul class="simple">
+<li><p>Cố gắng tối ưu hóa không gian và giảm thiểu số lớp (layer) để tiết kiệm chi phí sản xuất.</p></li>
+<li><p>Đặt các linh kiện lớn trước, sau đó sắp xếp các linh kiện nhỏ hơn để đảm bảo tính cân đối.</p></li>
+<li><p>Nếu đây là lần đầu làm PCB, hãy giữ thiết kế đơn giản, tránh mạch phức tạp để dễ dàng kiểm soát và xử lý.</p></li>
+</ul>
+</div>
+<p><strong>PCB của mạch trái tim:</strong></p>
+<a class="reference internal image-reference" href="../../_images/led_pcb_Page1.png"><img alt="Priority" class="align-center" src="../../_images/led_pcb_Page1.png" style="width: 561.5px; height: 397.0px;" />
+</a>
+<a class="reference internal image-reference" href="../../_images/led_pcb_Page2.png"><img alt="Priority" class="align-center" src="../../_images/led_pcb_Page2.png" style="width: 561.5px; height: 397.0px;" />
+</a>
+<p><strong>Hình ảnh 3D:</strong></p>
+<a class="reference internal image-reference" href="../../_images/img1.jpg"><img alt="Priority" class="align-center" src="../../_images/img1.jpg" style="width: 682.0px; height: 679.0px;" />
+</a>
+<a class="reference internal image-reference" href="../../_images/img2.jpg"><img alt="Priority" class="align-center" src="../../_images/img2.jpg" style="width: 584.0px; height: 583.0px;" />
+</a>
+<div style="margin-top: 20px;"></div><p><strong>File PCB tại đây:</strong></p>
+<p><a class="reference download internal" download="" href="../../_downloads/5ce34f2fb0625890fe0b635df06b2ec0/Mach_trai_tim.PcbDoc"><code class="xref download docutils literal notranslate"><span class="pre">Bấm</span> <span class="pre">để</span> <span class="pre">tải</span> <span class="pre">PCB</span></code></a></p>
+</section>
+<section id="buoc-2-trang-bi-ki-nang-can-thiet">
+<h2>Bước 2: Trang bị kĩ năng cần thiết<a class="headerlink" href="#buoc-2-trang-bi-ki-nang-can-thiet" title="Link to this heading"></a></h2>
 <a class="reference internal image-reference" href="../../_images/1.webp"><img alt="Priority" class="align-center" src="../../_images/1.webp" style="width: 898.0px; height: 528.0px;" />
 </a>
-<div style="margin-top: 20px;"></div><p>Tuy nhiên, trước khi bắt đầu làm mạch này, bạn cần trang bị một số kĩ năng và kiến thức sau:</p>
+<div style="margin-top: 20px;"></div><p>Trước khi bắt đầu làm mạch này, bạn cần trang bị một số kĩ năng và kiến thức sau:</p>
 <ul class="simple">
 <li><p>Kiến thức cơ bản về điện tử.</p></li>
 <li><p>Kỹ năng hàn mạch.</p></li>
@@ -103,8 +220,8 @@
 <li><p>Bạn cũng cần kiên nhẫn và có nhiều thời gian rảnh.</p></li>
 </ul>
 </section>
-<section id="buoc-2-len-danh-sach-linh-kien">
-<h2>Bước 2: Lên danh sách linh kiện<a class="headerlink" href="#buoc-2-len-danh-sach-linh-kien" title="Link to this heading"></a></h2>
+<section id="buoc-3-len-danh-sach-linh-kien">
+<h2>Bước 3: Lên danh sách linh kiện<a class="headerlink" href="#buoc-3-len-danh-sach-linh-kien" title="Link to this heading"></a></h2>
 <a class="reference internal image-reference" href="../../_images/2.avif"><img alt="Image 1" src="../../_images/2.avif" style="width: 30%;" />
 </a>
 <a class="reference internal image-reference" href="../../_images/3.webp"><img alt="Image 2" src="../../_images/3.webp" style="width: 30%;" />
@@ -124,10 +241,10 @@
 <li><p>1 x Jack DC cái 3.5mm x 1.3mm -&gt; loại gì, dán hay cắm?</p></li>
 </ul>
 <p>BOM Lists đầy đủ tại đây:</p>
-<p><a class="reference download internal" download="" href="../../_downloads/33640812fc491057a491125c29d18af6/PIF_Account_Information.xls"><code class="xref download docutils literal notranslate"><span class="pre">Bấm</span> <span class="pre">để</span> <span class="pre">tải</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/33640812fc491057a491125c29d18af6/PIF_Account_Information.xls"><code class="xref download docutils literal notranslate"><span class="pre">Bấm</span> <span class="pre">để</span> <span class="pre">tải</span> <span class="pre">BOM</span> <span class="pre">Lists</span> <span class="pre">đầy</span> <span class="pre">đủ</span></code></a></p>
 </section>
-<section id="buoc-3-gia-cong-mach">
-<h2>Bước 3: Gia công mạch<a class="headerlink" href="#buoc-3-gia-cong-mach" title="Link to this heading"></a></h2>
+<section id="buoc-4-gia-cong-mach">
+<h2>Bước 4: Gia công mạch<a class="headerlink" href="#buoc-4-gia-cong-mach" title="Link to this heading"></a></h2>
 <p>Dụng cụ cần thiết:</p>
 <blockquote>
 <div><ul class="simple">
@@ -136,33 +253,40 @@
 <li><p>Bàn là</p></li>
 <li><p>Dao cắt mạch</p></li>
 <li><p>Giấy nhám</p></li>
-<li><p>Dung dịch ăn mòn -&gt; dung dịch gì?</p></li>
+<li><p>Dung dịch ăn mòn</p></li>
 </ul>
 </div></blockquote>
 <p>Các bước thực hiện:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Bước 1: Chuẩn bị mạch in trên giấy bóng: Sau khi vẽ PCB trên phần mềm, xuất file để in mạch trên giấy bóng -&gt; note thêm vào nếu không layout thì chúng mình có public file in mạch luôn</p></li>
+<li><p><strong>Bước 1</strong>: Chuẩn bị mạch in trên giấy bóng: Sau khi vẽ PCB trên phần mềm, xuất file để in mạch trên giấy bóng -&gt; note thêm vào nếu không layout thì chúng mình có public file in mạch luôn</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lưu ý, phải dùng máy in laser mới được -&gt; vậy in ở đâu?</p>
+</div>
+<ul class="simple">
+<li><p><strong>Bước 2</strong>: Cắt và vệ sinh phíp đồng: Đo kích thước mạch và cắt, nên để dư 3- 5mm. Nên đánh dấu vị trí khu vực cần cắt. Sử dụng đầu nhọn của lưỡi dao để cắt từng cạnh (ở cả 2 mặt). Sau khi cắt đủ sâu có thể bẻ. Phíp đồng cần được vệ sinh để mực in trong quá trình chuyển mạch có thể chuyển lên hết PCB . Vệ sinh bằng cách chà giấy nhàm, sau khi chà không đặt tay lên bề mặt</p></li>
+<li><p><strong>Bước 3</strong>: Chuyển mạch (toner transfer): Cắt mạch in trên giấy bóng và đặt lên phíp đồng đã cắt và vệ sinh (mặt in mực tiếp xúc với mạch đồng) rồi tiến hành ủi mạch -&gt; bao lâu?. Nhiệt từ bàn ủi sẽ làm chảy lớp mực trên giấy bóng và chuyển xuống mặt đồng, bảo vệ những khu vực mà ta mong muốn không bị ăn mòn</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lưu ý, trong quá trình ủi, có thể do tác dụng nhiệt không đều hoặc vệ sinh phíp đồng không sạch mà có vài mảng mực sẽ không bám lên phíp đồng, ta dùng bút lông dầu để tô lại</p>
+</div>
+<ul class="simple">
+<li><p><strong>Bước 4</strong>: Ăn mòn (Etching) Đem mạch đi nhúng với dung dịch ăn mòn -&gt; bao lâu?, những phần không được mực in bảo vệ sẽ bị ăn mòn, chỉ chừa lại đường mạch mong muốn. Trong quá trình nhúng nên lắc board mạch để tăng tốc độ phản ứng (có thể dùng nhíp để lắc board mạch hoặc khoan lỗ ở một góc và sỏ -&gt; xỏ dây vào</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lưu ý, để đảm bảo an toàn cho bản thân và môi trường khi sử dụng hóa chất, không đổ hóa chất ăn mòn xuống cống</p>
+</div>
+<ul class="simple">
+<li><p><strong>Bước 5</strong>: Vệ sinh, khoan lỗ và bảo quản mạch: Sau khi ngâm mạch, dung dịch ăn mòn không tác dụng tới lớp mực, để loại bỏ lớp mực này, ta dùng giấy nhám để chà sạch hoặc dùng axeton để lau đi. Đối với các linh kiện chân cắm, lựa chọn mũi khoan có kích thước thích hợp -&gt; bao nhiêu để khoan lỗ. Lớp đồng để lâu trong không khí sẽ bị oxy hóa gây mất thẩm mỹ, do đó ta trộn axetol và nhựa thông lại để phủ lên PCB</p></li>
 </ul>
 </div></blockquote>
-<dl class="simple">
-<dt>Lưu ý, phải dùng máy in laser mới được -&gt; vậy in ở đâu?</dt><dd><ul class="simple">
-<li><p>Bước 2: Cắt và vệ sinh phíp đồng: Đo kích thước mạch và cắt, nên để dư 3- 5mm. Nên đánh dấu vị trí khu vực cần cắt. Sử dụng đầu nhọn của lưỡi dao để cắt từng cạnh (ở cả 2 mặt). Sau khi cắt đủ sâu có thể bẻ. Phíp đồng cần được vệ sinh để mực in trong quá trình chuyển mạch có thể chuyển lên hết PCB . Vệ sinh bằng cách chà giấy nhàm, sau khi chà không đặt tay lên bề mặt</p></li>
-<li><p>Bước 3: Chuyển mạch (toner transfer): Cắt mạch in trên giấy bóng và đặt lên phíp đồng đã cắt và vệ sinh (mặt in mực tiếp xúc với mạch đồng) rồi tiến hành ủi mạch -&gt; bao lâu?. Nhiệt từ bàn ủi sẽ làm chảy lớp mực trên giấy bóng và chuyển xuống mặt đồng, bảo vệ những khu vực mà ta mong muốn không bị ăn mòn</p></li>
-</ul>
-</dd>
-<dt>Lưu ý, trong quá trình ủi, có thể do tác dụng nhiệt không đều hoặc vệ sinh phíp đồng không sạch mà có vài mảng mực sẽ không bám lên phíp đồng, ta dùng bút lông dầu để tô lại</dt><dd><ul class="simple">
-<li><p>Bước 4: Ăn mòn (Etching) Đem mạch đi nhúng với dung dịch ăn mòn -&gt; bao lâu?, những phần không được mực in bảo vệ sẽ bị ăn mòn, chỉ chừa lại đường mạch mong muốn. Trong quá trình nhúng nên lắc board mạch để tăng tốc độ phản ứng (có thể dùng nhíp để lắc board mạch hoặc khoan lỗ ở một góc và sỏ -&gt; xỏ dây vào</p></li>
-</ul>
-</dd>
-<dt>Lưu ý, để đảm bảo an toàn cho bản thân và môi trường khi sử dụng hóa chất, không đổ hóa chất ăn mòn xuống cống</dt><dd><ul class="simple">
-<li><p>Bước 5: Vệ sinh, khoan lỗ và bảo quản mạch: Sau khi ngâm mạch, dung dịch ăn mòn không tác dụng tới lớp mực, để loại bỏ lớp mực này, ta dùng giấy nhám để chà sạch hoặc dùng axeton để lau đi. Đối với các linh kiện chân cắm, lựa chọn mũi khoan có kích thước thích hợp -&gt; bao nhiêu để khoan lỗ. Lớp đồng để lâu trong không khí sẽ bị oxy hóa gây mất thẩm mỹ, do đó ta trộn axetol và nhựa thông lại để phủ lên PCB</p></li>
-</ul>
-</dd>
-</dl>
 </section>
-<section id="thanh-qua">
-<h2>Thành quả:<a class="headerlink" href="#thanh-qua" title="Link to this heading"></a></h2>
+<section id="buoc-5-nhin-ngam-thanh-qua">
+<h2>Bước 5: Nhìn ngắm thành quả<a class="headerlink" href="#buoc-5-nhin-ngam-thanh-qua" title="Link to this heading"></a></h2>
 <div  class="sphinx-contrib-video-container align-left"><video autoplay="True" height="360" loop="True" muted="True" preload="auto" width="640" playsinline="True"><source src="../../_images/video.mp4" type="video/mp4"></video></div></section>
 </section>
 
