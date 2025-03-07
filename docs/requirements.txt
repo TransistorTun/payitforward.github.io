@@ -67,3 +67,5 @@ sphinx-rtd-dark-mode
 sphinxemoji
 
 sphinx-favicon
+
+sphinxcontrib.video

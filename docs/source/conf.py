@@ -14,7 +14,7 @@ release = '0.01'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["sphinx_rtd_theme",'sphinx_copybutton','sphinx_new_tab_link','sphinx_rtd_dark_mode','sphinxemoji.sphinxemoji','sphinx_favicon']
+extensions = ["sphinx_rtd_theme",'sphinx_copybutton','sphinx_new_tab_link','sphinx_rtd_dark_mode','sphinxemoji.sphinxemoji','sphinx_favicon','sphinxcontrib.video']
 
 favicons = [
    {
