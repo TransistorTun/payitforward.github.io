@@ -136,6 +136,10 @@ PCB Layout là bước quan trọng giúp bạn chuyển đổi sơ đồ mạch
 
 :download:`Bấm để tải PCB <../../_static/Mach_trai_tim.PcbDoc>`
 
+**File Board in tại đây:**
+
+:download:`Bấm để tải mạch để đi in <../../_static/LED_Heart_PCB.pdf>`
+
 Bước 2: Trang bị kĩ năng cần thiết
 -----------------------------------------
 
