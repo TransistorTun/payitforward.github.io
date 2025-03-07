@@ -16,24 +16,41 @@ Giới thiệu về IC NE555 — một IC quen thuộc, thường dùng để t�
 - 6 (Threshold): chân ngõ vào so áp với áp chuẩn là :math:`2/3 VCC`.
 - 7 (Discharge): chân này được nối với cực C của BJT bên trong IC, dùng để xả điện.
 
-Insert sơ đồ khối
+.. image:: img/ne555_block_diagram.png
+   :align: center
+   :alt: Priority
+   :scale: 100%
 
 Từ sơ đồ khối, ta cùng tìm hiểu chức năng từng khối bên trong NE555:
 
 - Khối so sánh: bao gồm hai OPAMP được cấu hình theo mạch so sánh (khoanh đỏ),  OPAMP1 so sánh áp tại chân Trigger điện áp chuẩn :math:`\frac{1}{3} VCC` và đưa ra mức logic cho ngõ vào S của chốt SR. Khi áp tại chân Trigger thấp hơn áp chuẩn :math:`\frac{1}{3} VCC`, ngõ ra sẽ ở mức cao, ngược lại, ngõ ra sẽ ở mức thấp. Mặt khác, OPAMP2 so sánh áp tại chân Threshold với áp chuẩn :math:`\frac{2}{3} VCC` và đưa ra mức logic cho ngõ vào R của chốt SR. Khi áp tại chân Threshold cao hơn áp chuẩn :math:`\frac{2}{3} VCC`, ngõ ra sẽ ở mức cao, ngược lại, ngõ ra sẽ ở mức thấp. 
 
-Insert hình ảnh khối so sánh trong NE555.
+.. image:: img/ne555_comparator_block.png
+   :align: center
+   :alt: Priority
+   :scale: 100%
 
 - Khối phần tử nhớ: gồm chốt SR (khoanh đỏ) đóng vai trò lưu trữ trạng thái thông tin. Trạng thái của ngõ ra Q phụ thuộc vào trạng thái ngõ vào của chân S và R. Trạng thái của ngõ ra :math:`\overline{Q}` là ngõ ra đảo của Q.
 
-Insert hình ảnh chốt SR trong NE555.
+.. image:: img/ne555_latch_sr.png
+   :align: center
+   :alt: Priority
+   :scale: 100%
 
-Insert bảng chân trị chốt SR.
+.. image:: img/latch_sr_truth_table.png
+   :align: center
+   :alt: Priority
+   :scale: 100%
 
 - Khối cổng logic: thường nhà sản xuất sẽ nối chân OUTPUT với ngõ ra Q của chốt SR, tuy nhiên có vài trường hợp, ngõ ra :math:`\overline{Q}` sẽ qua một cổng NOT và kết nối với chân OUTPUT. Nhiệm vụ của cổng NOT đơn giản là đảo trạng thái của ngõ vào và đưa ra ngõ ra.
 
 Từ đó, ta có thể suy ra bảng chân trị cho NE555 như sau:
-Insert bảng chân trị NE555.
+
+.. image:: img/ne555_truth_table.png
+   :align: center
+   :alt: Priority
+   :scale: 90%
+
 
 Như vậy, từ sơ đồ khối, ta nhận thấy có thể dùng NE555 tạo xung clock bằng cách thay đổi điện áp trên chân Trigger và Threshold.
 
