@@ -288,7 +288,7 @@ Bước 5: Hàn mạch
 Bước 6: Nhìn ngắm thành quả
 ----------------------------------
 
-.. video:: video/video.mp4
+.. video:: video/video.mov
     :width: 640
     :height: 360
     :nocontrols:
