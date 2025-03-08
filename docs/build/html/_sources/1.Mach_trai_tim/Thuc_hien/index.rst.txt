@@ -45,7 +45,7 @@ Thực hiện mạch in thủ công (Mạch nhấp nháy LED hình trái tim)
 
 **Mạch nguyên lý (Schematic) của mạch led trái tim:**
 
-.. image:: img/led.png
+.. image:: img/image.png
    :align: center
    :alt: Priority
    :scale: 50%
